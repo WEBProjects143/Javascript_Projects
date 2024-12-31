@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Classes</h1>
+
+</body>
+<script>
+class Animal{
+    constructor(name){
+        this.name=name
+    }
+    run(){
+        console.log(`${this.name} is running`)
+    }
+    stop(){
+        console.log(`${this.name} is stopped`)
+    }
+}
+
+class Rabbit extends Animal{
+    constructor(name,topSpeed){
+        super(name);
+        this.name=name
+        this.top=topSpeed
+    }
+    hide(){
+        console.log(`${this.name} is hide`)
+    }
+    stop(){
+        setTimeout(()=>{
+            super.stop()
+        },1000) 
+       
+    }
+    running(){
+        console.log(`${this.name} is running in top speed ${this.top}`)
+    }
+}
+const demo=new Rabbit("Rabbit",50)
+demo.stop()
+demo.running()
+</script>
+</html>
